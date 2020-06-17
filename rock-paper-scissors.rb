@@ -14,37 +14,37 @@ x_times = gets.to_i
 
 draw = 0 #ничья
 
-vibor = %w[камень ножницы бумага]
+choice = %w[камень ножницы бумага] #выбор
 
 x_times.times {
 puts
-gamer1_vibor = vibor.sample
-gamer2_vibor = vibor.sample
+gamer1_choice = choice.sample
+gamer2_choice = choice.sample
 
-puts gamer1 + " " + gamer1_vibor
-puts gamer2 + " " + gamer2_vibor
+puts gamer1 + " " + gamer1_choice
+puts gamer2 + " " + gamer2_choice
 
 
 #ничья
-if gamer1_vibor == "камень"  && gamer2_vibor == "камень" ||
-   gamer1_vibor == "ножницы" && gamer2_vibor == "ножницы" ||
-   gamer1_vibor == "бумага"  && gamer2_vibor == "бумага"
+if gamer1_choice == "камень"  && gamer2_choice == "камень" ||
+   gamer1_choice == "ножницы" && gamer2_choice == "ножницы" ||
+   gamer1_choice == "бумага"  && gamer2_choice == "бумага"
    draw +=1
    puts "НИЧЬЯ!"
 end
 
 #Победа ирок 1
-if gamer1_vibor == "камень"  && gamer2_vibor == "ножницы" ||
-   gamer1_vibor == "ножницы" && gamer2_vibor == "бумага" ||
-   gamer1_vibor == "бумага"  && gamer2_vibor == "камень"
+if gamer1_choice == "камень"  && gamer2_choice == "ножницы" ||
+   gamer1_choice == "ножницы" && gamer2_choice == "бумага" ||
+   gamer1_choice == "бумага"  && gamer2_choice == "камень"
    puts "#{gamer1} П О Б Е Д А !!!"
    gamer1_win += 1
 end
 
 #Победа игрок 2
-if gamer1_vibor == "ножницы" && gamer2_vibor == "камень" ||
-   gamer1_vibor == "бумага"  && gamer2_vibor == "ножницы" ||
-   gamer1_vibor == "камень"  && gamer2_vibor == "бумага"
+if gamer1_choice == "ножницы" && gamer2_choice == "камень" ||
+   gamer1_choice == "бумага"  && gamer2_choice == "ножницы" ||
+   gamer1_choice == "камень"  && gamer2_choice == "бумага"
    puts "#{gamer2} П О Б Е Д А !!!"
    gamer2_win += 1
 end
@@ -55,3 +55,4 @@ puts
 puts "Ничья "  + draw.to_s
 puts gamer1 + " " + gamer1_win.to_s
 puts gamer2 + " " + gamer2_win.to_s
+
